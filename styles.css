@@ -1,1 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root {
+    --cyan: #00f2ff;
+    --cyan-dark: #00a8b3;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    background: #050505;
+}
+
+.text-cyan { color: var(--cyan); }
+.btn-cyan { background: var(--cyan); color: #000; font-weight: bold; border: none; }
+.btn-cyan:hover { background: var(--cyan-dark); transform: translateY(-2px); }
+.btn-outline-cyan { border: 2px solid var(--cyan); color: var(--cyan); }
+.btn-outline-cyan:hover { background: var(--cyan); color: #000; }
 

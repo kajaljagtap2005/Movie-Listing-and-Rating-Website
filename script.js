@@ -51,3 +51,27 @@ const movies = [
     }
 ];
 
+function getAverage(arr) {
+    return (arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(1);
+}
+
+function renderGrid(data = movies) {
+    const grid = document.getElementById('movieGrid');
+    grid.innerHTML = data.map(m => `
+        <div class="col" data-aos="fade-up">
+            <div class="movie-card shadow-lg" onclick="showDetails(${m.id})">
+                <div class="card-img-container">
+                    <img src="${m.poster}" class="w-100 h-100 object-fit-cover" alt="${m.title}">
+                </div>
+                <div class="p-4">
+                    <h4 class="fw-bold mb-1">${m.title}</h4>
+                    <p class="text-muted small mb-3">${m.genre} | ${m.year}</p>
+                    <div class="d-flex justify-content-between">
+                        <span class="text-cyan"><i class="bi bi-star-fill me-1"></i> ${getAverage(m.ratings)}</span>
+                        <span class="text-muted small">View Details</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}

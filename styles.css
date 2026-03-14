@@ -18,3 +18,22 @@ body {
 .btn-outline-cyan { border: 2px solid var(--cyan); color: var(--cyan); }
 .btn-outline-cyan:hover { background: var(--cyan); color: #000; }
 
+/* Glassmorphism Classes */
+.glass-nav {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+.glass-modal {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 242, 255, 0.3);
+}

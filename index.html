@@ -3,65 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MovieHub | Discover & Rate</title>
-  <link rel="stylesheet" href="styles.css">
+    <title>CineMagic | Premium Movie Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-white">
+<body>
 
-    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
-        <div class="container">
-            <a class="navbar-brand fw-bold fs-3 text-cyan" href="index.html">MOVIE<span class="text-white">HUB</span></a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="bi bi-list text-white fs-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
-                </ul>
-            </div>
+    <nav class="navbar">
+        <div class="logo">Cine<span>Magic</span></div>
         </div>
     </nav>
 
-    <section class="hero-section d-flex align-items-center">
-        <div class="container text-center" data-aos="zoom-out" data-aos-duration="1500">
-            <h1 class="display-1 fw-bolder tracking-in-expand">CINEMA PARADISO</h1>
-            <p class="lead text-cyan-light mb-4">Explore the finest classics of Indian Cinema with live ratings.</p>
-            <a href="#explore" class="btn btn-cyan btn-lg rounded-pill px-5 shadow-lg">Explore Library</a>
-        </div>
-    </section>
-
-    <div class="container py-5" id="explore">
-        <div class="row mb-5 align-items-center">
-            <div class="col-md-6"><h2 class="fw-bold border-start border-cyan border-4 ps-3">Trending Movies</h2></div>
-            <div class="col-md-6">
-                <div class="input-group glass-card">
-                    <span class="input-group-text bg-transparent border-0 text-white"><i class="bi bi-search"></i></span>
-                    <input type="text" id="searchInput" class="form-control bg-transparent border-0 text-white" placeholder="Search by title...">
+    <header class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Ultimate Cinema Experience</h1>
+                <p>Explore high-rated hits with real-time trailers and interactive ratings.</p>
+                <div class="hero-btns">
+                    <a href="#movies" class="cta-btn main-btn">Start Watching</a>
                 </div>
             </div>
         </div>
+    </header>
 
-         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="movieGrid">
+    <main class="container" id="movies">
+        <h2 class="section-title">Trending Now</h2>
+        <div class="movie-grid" id="movieGrid">
             </div>
-    </div>
+    </main>
 
-    <div class="modal fade" id="movieModal" tabindex="-1">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content glass-modal border-0 text-white">
-                <div class="modal-body p-0">
-                    <div class="row g-0">
-                        <div class="col-lg-5">
-                            <img id="modalPoster" src="" class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Poster">
-                        </div>
-                        <div class="col-lg-7 p-4 p-md-5">
-                            <button type="button" class="btn-close btn-close-white float-end" data-bs-dismiss="modal"></button>
-                            <h2 id="modalTitle" class="display-4 fw-bold text-cyan"></h2>
-                            <p id="modalMeta" class="text-muted fs-5"></p>
-                            <hr class="border-cyan">
-                            <p id="modalDesc" class="fs-5 lh-base my-4"></p>
-
+    <section class="feedback-container">
+        <div class="feedback-card" data-aos="zoom-in">
+            <h2>User Review Portal</h2>
+            <p>Which 2025 release are you most excited for?</p>
+            <form id="feedbackForm">
+                <div class="input-group">
+                    <input type="text" id="userName" placeholder="Your Name" required>
+                    <textarea id="userText" placeholder="Write your review here..." required></textarea>
+                </div>
+                <div class="form-footer">
+                    <button type="submit" class="submit-btn">Submit Feedback</button>
+                </div>
+            </form>
+            <div id="successMessage" class="hidden-msg">
+                <div class="msg-content">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Thank you! Your feedback has been submitted successfully.</p>
+                </div>
+            </div>
+        </div>
+    </section>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="movieGrid">
             </div>
     </div>

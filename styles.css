@@ -27,3 +27,18 @@ body { background-color: var(--dark); color: var(--text); overflow-x: hidden; sc
     backdrop-filter: blur(20px);
     border: 1px solid rgba(0, 242, 255, 0.3);
 }
+
+/* Movie Grid */
+.container { padding: 4rem 8%; }
+.movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+.movie-card { background: var(--card); border-radius: 20px; overflow: hidden; transition: 0.4s; border: 1px solid rgba(255,255,255,0.05); }
+.movie-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+
+/* Feedback Form UI Fix */
+.feedback-container { padding: 80px 8%; background: #0e0e12; }
+.feedback-card { max-width: 700px; margin: 0 auto; background: var(--card); padding: 40px; border-radius: 25px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+.input-group { display: flex; flex-direction: column; gap: 15px; margin-top: 25px; }
+#userName, #userText { width: 100%; background: #1e1e24; border: 1px solid #333; padding: 15px; border-radius: 12px; color: white; outline: none; }
+#userText { height: 120px; resize: none; }
+.form-footer { display: flex; justify-content: flex-end; margin-top: 20px; }
+.submit-btn { padding: 12px 30px; background: linear-gradient(45deg, var(--primary), var(--secondary)); border: none; color: white; border-radius: 50px; cursor: pointer; font-weight: 600; transition: 0.3s; }

@@ -48,5 +48,39 @@ function renderMovie(movie) {
     document.getElementById('movieGrid').appendChild(card);
     setupStars(card);
 }
-    `).join('');
+
+ 
+
+// Interactive Star Ratings
+function setupStars(card) {
+    const stars = card.querySelectorAll('.stars i');
+    stars.forEach(s => {
+        s.onmouseover = () => stars.forEach((x, i) => x.classList.toggle('fas', i < s.dataset.v));
+        s.onclick = () => alert(`Thank you for rating ${card.querySelector('h3').innerText} ${s.dataset.v} stars!`);
+    });
 }
+
+// Feedback Success Response
+document.getElementById('feedbackForm').onsubmit = (e) => {
+    e.preventDefault();
+    e.target.style.display = 'none';
+    document.getElementById('successMessage').style.display = 'block';
+};
+
+// Trailer Modal Control
+async function showTrailer(id) {
+    const res = await fetch(`${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}`);
+    const data = await res.json();
+    const trailer = data.results.find(v => v.type === 'Trailer');
+    if (trailer) {
+        document.getElementById('mainPlayer').src = `https://www.youtube.com/embed/${trailer.key}?autoplay=1`;
+        document.getElementById('videoModal').style.display = 'flex';
+    } else { alert("Official trailer not found for this title."); }
+}
+
+document.querySelector('.close-modal').onclick = () => {
+    document.getElementById('videoModal').style.display = 'none';
+    document.getElementById('mainPlayer').src = '';
+};
+
+loadApp();

@@ -13,7 +13,7 @@ body { background-color: var(--dark); color: var(--text); overflow-x: hidden; sc
 .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 8%; background: rgba(10, 10, 12, 0.95); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .logo { font-size: 1.8rem; font-weight: 800; }
 .logo span { color: var(--primary); }
- 
+
 /* Hero - Start Watching Positioned Properly */
 .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.6), var(--dark)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2000') center/cover; }
 .hero-overlay { height: 100%; display: flex; align-items: center; justify-content: center; }
@@ -21,12 +21,10 @@ body { background-color: var(--dark); color: var(--text); overflow-x: hidden; sc
 .hero h1 { font-size: 4rem; font-weight: 800; margin-bottom: 1.5rem; }
 .hero-btns { margin-top: 2rem; display: flex; justify-content: center; }
 
+
 .cta-btn { padding: 14px 35px; background: linear-gradient(45deg, var(--primary), var(--secondary)); border-radius: 50px; color: white; text-decoration: none; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; }
 .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 75, 43, 0.4); }
-0, 0.95);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 242, 255, 0.3);
-}
+
 
 /* Movie Grid */
 .container { padding: 4rem 8%; }
@@ -34,11 +32,28 @@ body { background-color: var(--dark); color: var(--text); overflow-x: hidden; sc
 .movie-card { background: var(--card); border-radius: 20px; overflow: hidden; transition: 0.4s; border: 1px solid rgba(255,255,255,0.05); }
 .movie-card:hover { transform: translateY(-10px); border-color: var(--primary); }
 
+
 /* Feedback Form UI Fix */
 .feedback-container { padding: 80px 8%; background: #0e0e12; }
 .feedback-card { max-width: 700px; margin: 0 auto; background: var(--card); padding: 40px; border-radius: 25px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
 .input-group { display: flex; flex-direction: column; gap: 15px; margin-top: 25px; }
 #userName, #userText { width: 100%; background: #1e1e24; border: 1px solid #333; padding: 15px; border-radius: 12px; color: white; outline: none; }
 #userText { height: 120px; resize: none; }
+
 .form-footer { display: flex; justify-content: flex-end; margin-top: 20px; }
 .submit-btn { padding: 12px 30px; background: linear-gradient(45deg, var(--primary), var(--secondary)); border: none; color: white; border-radius: 50px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+
+
+.hidden-msg { display: none; margin-top: 20px; text-align: center; color: #2ecc71; animation: fadeIn 0.5s ease; }
+.msg-content i { font-size: 2.5rem; margin-bottom: 10px; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+
+/* Modal */
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; align-items: center; justify-content: center; }
+.modal-box { width: 90%; max-width: 800px; position: relative; }
+.close-modal { position: absolute; top: -50px; right: 0; color: white; font-size: 2.5rem; cursor: pointer; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; }
+.video-ratio iframe { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 15px; }
+
+@media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .nav-search { width: 100%; } .navbar { flex-direction: column; gap: 15px; } }
